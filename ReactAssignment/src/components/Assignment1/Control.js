@@ -44,8 +44,10 @@ if(e.target.checked === true){
            console.log(this.state.annualy,this.state.monthly);
         }
     })
-     this.state.checked =false;
-
+   
+        this.setState({
+            checked:false
+        })
 }
              
       this.setState({
@@ -81,30 +83,35 @@ if(e.target.checked === true){
         
         if(this.state.checked === true){
             permonth =(
-                <div className="d-flex flex-row justify-content-center ">
-                <div className="card">  
+                <div className="  container">
+                    <div className="row justify-content-center">
+
+                   
+                <div className="card  col-lg-3 col-md-4  col-sm-5 col-5 mr-2">  
                        <ul className="d-block ">
                             <li className="font-weight-bold mb-5"> Lollipop</li>
-                             <li> <h4 className=" font-weight-bolder">${this.state.monthly[0]}<span id="per">per month</span></h4>   </li>
-                             <li className="serv">For {this.state.monthly[3]} serving </li>
+                             <li> <h4 className="size font-weight-bolder">${this.state.monthly[0]}<span id="per">per month</span></h4>   </li>
+                             <li className="serv fonts">For {this.state.monthly[3]} serving </li>
                       </ul>  
                       </div>
-                      <div className="card">  
+                      <div className="  card  col-lg-3 col-md-4 col-sm-5 col-5 mr-2">  
                        <ul className="d-block ">
                              <li className="font-weight-bold  mb-5">Icecandy</li>
-                             <li> <h4 className=" font-weight-bolder ">${this.state.monthly[1]}<span id="per">per month</span>  </h4></li>
-                             <li className="serv">For {this.state.monthly[3]} serving  </li>
+                             <li> <h4 className=" size font-weight-bolder ">${this.state.monthly[1]}<span id="per">per month</span>  </h4></li>
+                             <li className="serv fonts">For {this.state.monthly[3]} serving  </li>
                              </ul>  
                       </div>
          
                      
-                      <div className="card card1">  
-                       <ul className="d-block ">
+                      <div className="card card1 col-lg-3 col-md-8 col-sm-10 col-10 mr-2">  
+                       <ul className="d-block Savings ">
                              <li className="font-weight-bold ">Your savings</li>
                              <li className="font-weight-bold  mb-4"> with lollipop</li>
                              <li className="text-info h4 font-weight-bolder"> $ {this.state.monthly[2]} </li>
                              <li className="diff">per month</li>
                              </ul>  
+                      </div>
+
                       </div>
                 </div>
                     
@@ -113,30 +120,30 @@ if(e.target.checked === true){
      }  else{
       peryear= ( 
       
-      <div className="d-flex flex-row justify-content-center ">
-        <div className="card">  
+      <div className=" container ">
+          <div className="row justify-content-center">
+           <div className="card col-lg-3 col-md-4 col-sm-5 col-5 mr-2">  
                <ul className="d-block ">
                     <li className="font-weight-bold mb-5"> Lollipop</li>
-                     <li  ><h4 className=" font-weight-bolder "> ${this.state.annualy[0]}<span id="per">per year</span></h4> </li>
-                     <li className="serv">For {this.state.annualy[3]} serving </li>
+                     <li  ><h4 className=" size font-weight-bolder "> ${this.state.annualy[0]}<span id="per">per year</span></h4> </li>
+                     <li className="serv font">For {this.state.annualy[3]} serving </li>
               </ul>  
               </div>
-              <div className="card">  
+              <div className="card col-lg-3 col-md-4 col-sm-5 col-5 mr-2">  
                <ul className="d-block ">
                      <li className="font-weight-bold mb-5">Icecandy</li>
-                     <li > <h4 className=" font-weight-bolder "> ${this.state.annualy[1]}<span id="per">per year</span>  </h4> </li>
-                     <li className="serv">For {this.state.annualy[3]} serving  </li>
+                     <li > <h4 className=" size font-weight-bolder "> ${this.state.annualy[1]}<span id="per">per year</span>  </h4> </li>
+                     <li className="serv font">For {this.state.annualy[3]} serving  </li>
                      </ul>  
               </div>
- 
-             
-              <div className="card card1">  
-               <ul className="d-block ">
+              <div className="card card1 col-lg-3 col-md-8 col-sm-10 col-10 mr-2">  
+               <ul className="d-block  Savings">
                      <li className="font-weight-bold">Your savings</li>
-                     <li className="font-weight-bold  mb-4"> with lollipop</li>
+                     <li className="font-weight-bold mb-4"> with lollipop</li>
                      <li className="text-info h4  font-weight-bolder">${this.state.annualy[2]} </li>
                      <li className="diff">per year</li>
                      </ul>  
+              </div>
               </div>
         </div>
             
@@ -145,11 +152,11 @@ if(e.target.checked === true){
                 
         return (
             <div>
-
-               
-                <div className="d-flex flex-row justify-content-center">
-                       
-                <div>
+                <div className="container ">    
+                <div className="row justify-content-center">
+                    
+                
+                <div className="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-6 mr-2 ">
                 <label htmlFor="radiobutton"  className="box" >
                     <input 
                         type="radio"
@@ -158,15 +165,11 @@ if(e.target.checked === true){
                         checked={this.state.check ==="25"}
                         onChange={this.onchangehandler}
                           />
-                          <span >  <h5 className="center font-weight-bold"> 25 Serving</h5>   </span>  
+                          <span className="top" >  <h5 className="center font-weight-bold"> 25 Serving</h5>   </span>  
                  </label>
                 </div>
-               
-             
-                 
-                 
-                        
-                  <label  htmlFor="radiobutton1" className="box">
+                    <div className="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-3 mr-2  ">
+                    <label  htmlFor="radiobutton1" className="box">
                       
                       <input  
                          type="radio" 
@@ -175,12 +178,13 @@ if(e.target.checked === true){
                          checked={this.state.check ==="50"} 
                          onChange={this.onchangehandler} 
                         /> 
-                     <span  > <h5 className="center font-weight-bold"> 50 Serving</h5>   </span>  
+                     <span className="top" > <h5 className="center font-weight-bold"> 50 Serving</h5>   </span>  
                   </label>
                  
-                
-                 <label htmlFor="radiobutton2" className="box" >
-                      
+                    </div>
+                  
+                   <div className="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-6 mr-2  ">
+                   <label htmlFor="radiobutton2" className="box" >
                       <input  
                          type="radio" 
                          name="" id="radiobutton2"
@@ -190,9 +194,11 @@ if(e.target.checked === true){
                         /> 
                        <span > <h5 className="center font-weight-bold"> 100 Serving</h5>   </span>  
                   </label>
+                
+                   </div>
                  
-            
-                <label htmlFor="radiobutton3" className="box" >
+                    <div className=" col-xl-1 col-lg-2 col-md-2 col-sm-2 col-3 mr-2 ">
+                    <label htmlFor="radiobutton3" className="box" >
                       
                       <input  
                          type="radio" 
@@ -203,15 +209,18 @@ if(e.target.checked === true){
                         /> 
                       <span > <h5 className="center font-weight-bold"> 200 Serving</h5>   </span>  
                   </label>
+               
+                    </div>
                   
                 
+                </div>
                 
         </div>
 
       
         
         <div>
-                    <div className="text-center mt-3">
+                    <div className="text-center mt-3 ml-2">
 
                             <span  className="adjust font-weight-bold">Annual <br/> 50% </span>
                              
@@ -230,12 +239,13 @@ if(e.target.checked === true){
                                         className="react-switch mt-5"
                                         id="material-switch"
                                     /> 
-                                     <span className="adjust2 font-weight-bold">
-                                        Monthly
-                                        </span>
+                                   
+                                    <b className=" adjust2 ">
+                                    Monthly
+                                        </b>    
+                                     
 
                     </div>
-                    
                     {permonth}
                     {peryear}
 </div>
